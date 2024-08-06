@@ -1,0 +1,11 @@
+#nav-link {
+    background-color: lightsalmon;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 50px;
+    align-items: center;
+    font-size: large;
+    font-weight: 600;
+}

@@ -1,0 +1,13 @@
+#heading {
+    background-color: blue;
+    color: #ffff;
+    text-align: center;
+    font-size: 50px;
+}
+#paragraph{
+    background-color: aqua;
+    font-size: large;
+    margin-top: 5px;
+    height: 100px;
+    text-align: center;
+}
