@@ -15,4 +15,9 @@ export class AppComponent {
   recievingMessege(messege:string) {
     this.recievedMessege = messege;
   } 
+
+  inputText:string = ''
+  addValue(inputElement:HTMLInputElement) {
+    this.inputText = inputElement.value;
+  }  
 }

@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ParentComponent } from './parent/parent.component';
     FooterComponent,
     UserProfileComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    HooksComponent
   ],
   imports: [
     BrowserModule,
