@@ -10,6 +10,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { BindingComponent } from './binding/binding.component';
+import { FormsModule } from '@angular/forms';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { HooksComponent } from './hooks/hooks.component';
     UserProfileComponent,
     ChildComponent,
     ParentComponent,
-    HooksComponent
+    HooksComponent,
+    BindingComponent,
+    DirectivesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

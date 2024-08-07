@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class TestComponent {
   interpolation: string = 'Using String Interpolation';
   propBinding: string = 'https://www.google.co.uk/';
-  searchValue: string = '';
+  searchValue: string = 'Joy';
 
   changesearchValue(eventData: Event) {
     this.searchValue = (<HTMLInputElement>eventData.target).value;
