@@ -7,6 +7,8 @@ import { TestComponent } from './test/test.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     TestComponent,
     NavComponent,
     FooterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,

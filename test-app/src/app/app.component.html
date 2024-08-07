@@ -1,5 +1,7 @@
 <h1 id="heading">Angular Application</h1>
-<app-nav></app-nav>
-<app-test></app-test>
-<app-footer></app-footer>
-<app-user-profile></app-user-profile>
+<!-- <app-nav></app-nav> -->
+<!-- <app-test></app-test> -->
+<!-- <app-footer></app-footer> -->
+<!-- <app-user-profile></app-user-profile> -->
+<app-child [message]= "parentMessege" [image] = "parentImage" (messegeEvent)="recievingMessege($event)"></app-child>
+<p>{{recievedMessege}}</p>
