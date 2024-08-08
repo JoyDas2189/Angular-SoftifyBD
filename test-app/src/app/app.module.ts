@@ -17,6 +17,9 @@ import { BindingComponent } from './binding/binding.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { TemplateComponent } from './template/template.component';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { CustomAttributeDirective } from './custom-attribute.directive';
+import { CustomStructuralDirective } from './custom-structural.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { TemplateComponent } from './template/template.component';
     BindingComponent,
     DirectivesComponent,
     TemplateComponent,
+    CustomDirectiveComponent,
+    CustomAttributeDirective,
+    CustomStructuralDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
