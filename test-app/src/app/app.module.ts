@@ -20,6 +20,7 @@ import { TemplateComponent } from './template/template.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { CustomAttributeDirective } from './custom-attribute.directive';
 import { CustomStructuralDirective } from './custom-structural.directive';
+import { CustomAttributeRenderer2Directive } from './custom-attribute-renderer2.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CustomStructuralDirective } from './custom-structural.directive';
     CustomDirectiveComponent,
     CustomAttributeDirective,
     CustomStructuralDirective,
+    CustomAttributeRenderer2Directive,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
