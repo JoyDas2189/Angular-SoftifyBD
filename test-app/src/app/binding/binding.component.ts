@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './binding.component.css',
 })
 export class BindingComponent {
-  title: string = 'BINDING';
+  title: string = 'BINDINGS';
   interpolation: string = 'Using String Interpolation';
   propBinding: string = 'https://www.google.co.uk/';
   displayValue: string = '';
