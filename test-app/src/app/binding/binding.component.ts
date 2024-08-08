@@ -10,7 +10,7 @@ export class BindingComponent {
   interpolation: string = 'Using String Interpolation';
   propBinding: string = 'https://www.google.co.uk/';
   displayValue: string = '';
-  searchValue: string = 'Joy Das';
+  searchValue: string = '';
 
   displayEventValue(eventData: Event) {
     this.displayValue = (<HTMLInputElement>eventData.target).value;

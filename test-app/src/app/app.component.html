@@ -2,19 +2,18 @@
 <!-- <app-nav></app-nav> -->
 <!-- <app-test></app-test> -->
 <!-- <app-footer></app-footer> -->
-<app-binding></app-binding>
-<!-- <app-user-profile></app-user-profile> -->
-<!-- <app-child [message]= "parentMessege" [image] = "parentImage" (messegeEvent)="recievingMessege($event)"></app-child>
-<p>{{recievedMessege}}</p>
+<app-user-profile></app-user-profile>
 
-<br> -->
+<br>
 <!-- <div class="container">
     <input type="text" placeholder="Enter anything here" #input>
     <button (click)="addValue(input)">Submit</button>
-</div> -->
-<!-- <app-hooks [demoValue]="inputText">
-    <h5>This is Projected Content {{inputText}}</h5>
+</div>
+<app-hooks [demoValue]="inputText">
 </app-hooks> -->
 
+<app-child [message]= "parentMessege" [image] = "parentImage" (messegeEvent)="recievingMessege($event)"></app-child>
+<p class="parentRecieved">{{recievedMessege}}</p>
+<app-binding></app-binding>
 <app-template></app-template>
-<!-- <app-directives></app-directives>  -->
+<app-directives></app-directives> 

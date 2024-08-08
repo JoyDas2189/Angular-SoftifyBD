@@ -5,10 +5,14 @@
         <a [href]="propBinding">Go to Google</a>
     </p>
   
-    <input type="text" (input)="displayEventValue($event)" placeholder="Type something..." />
-    <div class="display-value">{{ displayValue }}</div>
-  
-    <input type="text" [(ngModel)]="searchValue" placeholder="Search..." />
-    <div class="search-value">You searched for "{{ searchValue }}"</div>
+    <div [ngClass]="{changeBackground:displayValue != ''}">
+        <input type="text" (input)="displayEventValue($event)" placeholder="Type something..." />
+        <div class="display-value" *ngIf="displayValue != '' ">You Entered "{{ displayValue }}"</div> 
+    </div>
+    
+    <div [ngClass]="{changeBackground:searchValue != ''}">
+        <input type="text" [(ngModel)]="searchValue" placeholder="Search..."  />
+        <div class="search-value" *ngIf="searchValue != '' ">You searched for "{{ searchValue }}"</div>
+    </div>
 </div>
   

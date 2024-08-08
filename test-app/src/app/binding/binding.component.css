@@ -53,4 +53,9 @@ input[type="text"] {
     color: #28a745;
     font-weight: bold;
 }
+
+.changeBackground {
+  background-color: rgb(240, 224, 218);
+  border-radius: 10px;
+}
   
