@@ -21,6 +21,7 @@ import { CustomDirectiveComponent } from './custom-directive/custom-directive.co
 import { CustomAttributeDirective } from './custom-attribute.directive';
 import { CustomStructuralDirective } from './custom-structural.directive';
 import { CustomAttributeRenderer2Directive } from './custom-attribute-renderer2.directive';
+import { CustomAttributeHostlistenerDirective } from './custom-attribute-hostlistener.directive';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CustomAttributeRenderer2Directive } from './custom-attribute-renderer2.
     CustomAttributeDirective,
     CustomStructuralDirective,
     CustomAttributeRenderer2Directive,
+    CustomAttributeHostlistenerDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
