@@ -35,10 +35,15 @@ body {
     color: #666;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="number"],
-.form-group textarea {
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #cccccc;
@@ -76,4 +81,8 @@ body {
 
 .form-group button:hover {
     background-color: #333333;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
 }

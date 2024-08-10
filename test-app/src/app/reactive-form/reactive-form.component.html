@@ -1,34 +1,61 @@
 <div class="registration-form">
-  <h2>Registration Form</h2>
+  <h2>Registration Form using Reactive Form</h2>
   <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="firstname">First Name</label>
-      <input type="text" id="firstname" name="firstname" required formControlName="firstName" />
-    </div>
+    <div formGroupName="nameDetails">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          formControlName="firstName"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="lastname">Last Name</label>
-      <input type="text" id="lastname" name="lastname" required formControlName="lastName" />
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          formControlName="lastName"
+        />
+      </div>
     </div>
 
     <div class="form-group">
       <label for="age">Age</label>
-      <input type="number" id="age" name="age" required  formControlName="age"/>
+      <input type="number" id="age" name="age" formControlName="age" />
     </div>
 
     <div class="form-group">
       <label>Gender</label>
       <div class="radio-group">
         <label>
-          <input type="radio" name="gender" value="male" required formControlName="gender"/>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            formControlName="gender"
+          />
           Male
         </label>
         <label>
-          <input type="radio" name="gender" value="female" required formControlName="gender" />
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            formControlName="gender"
+          />
           Female
         </label>
         <label>
-          <input type="radio" name="gender" value="other" required  formControlName="gender"/>
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            formControlName="gender"
+          />
           Other
         </label>
       </div>
@@ -36,12 +63,19 @@
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required formControlName="email" />
+      <input type="email" id="email" name="email" formControlName="email" />
+      <!-- <span
+        *ngIf="
+          !reactiveForm.get('nameDetails.email').valid &&
+          reactiveForm.get('nameDetails.email').touched
+        "
+        >You Email is Invalid</span
+      > -->
     </div>
 
     <div class="form-group">
       <label for="country">Country</label>
-      <select id="country" name="country" required formControlName="country">
+      <select id="country" name="country" formControlName="country">
         <option value="">Select your country</option>
         <option value="usa">United States</option>
         <option value="bangladesh">Bangladesh</option>

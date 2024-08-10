@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,12 +12,14 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
-      firstName: new FormControl('Joy'),
-      lastName: new FormControl('Das'),
-      age: new FormControl(23),
-      gender: new FormControl('male'),
-      email: new FormControl('joy.softifybd@gmail.com'),
-      country: new FormControl('bangladesh'),
+      nameDetails: new FormGroup({
+        firstName: new FormControl('Joy', Validators.required),
+        lastName: new FormControl('Das', Validators.required),
+      }),
+      age: new FormControl(23, Validators.required),
+      gender: new FormControl('male', Validators.required),
+      email: new FormControl('joy.softifybd@gmail.com', [Validators.required, Validators.email]),
+      country: new FormControl('bangladesh', Validators.required),
     });
   }
 
