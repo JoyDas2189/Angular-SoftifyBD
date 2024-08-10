@@ -1,0 +1,60 @@
+<div class="registration-form">
+  <h2>Registration Form</h2>
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" name="firstname" required ngModel/>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" name="lastname" required ngModel/>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required ngModel/>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" value="male" required ngModel/> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" required ngModel /> Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other" required ngModel/> Other
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required ngModel/>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select id="country" name="country" required ngModel>
+        <option value="">Select your country</option>
+        <option value="usa">United States</option>
+        <option value="bangladesh">Bangladesh</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+        <option value="australia">Australia</option>
+        <option value="india">India</option>
+        <option value="germany">Germany</option>
+        <option value="france">France</option>
+        <option value="japan">Japan</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

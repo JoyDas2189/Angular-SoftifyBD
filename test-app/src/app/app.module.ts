@@ -23,6 +23,7 @@ import { CustomStructuralDirective } from './custom-structural.directive';
 import { CustomAttributeRenderer2Directive } from './custom-attribute-renderer2.directive';
 import { CustomAttributeHostlistenerDirective } from './custom-attribute-hostlistener.directive';
 import { CustomAttributeHostbinderDirective } from './custom-attribute-hostbinder.directive';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CustomAttributeHostbinderDirective } from './custom-attribute-hostbinde
     CustomAttributeRenderer2Directive,
     CustomAttributeHostlistenerDirective,
     CustomAttributeHostbinderDirective,
+    TemplateDrivenFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
