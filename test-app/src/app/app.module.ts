@@ -14,7 +14,7 @@ import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { BindingComponent } from './binding/binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { TemplateComponent } from './template/template.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
@@ -24,6 +24,7 @@ import { CustomAttributeRenderer2Directive } from './custom-attribute-renderer2.
 import { CustomAttributeHostlistenerDirective } from './custom-attribute-hostlistener.directive';
 import { CustomAttributeHostbinderDirective } from './custom-attribute-hostbinder.directive';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     CustomAttributeHostlistenerDirective,
     CustomAttributeHostbinderDirective,
     TemplateDrivenFormComponent,
+    ReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
