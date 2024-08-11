@@ -5,12 +5,11 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" formControlName="name" />
-    </div>
-    <div>
       <small
         *ngIf="
           !reactiveForm.get('name')?.valid && reactiveForm.get('name')?.touched
         "
+        class="error-message"
         >Invalid Name</small
       >
     </div>
@@ -18,12 +17,11 @@
     <div class="form-group">
       <label for="age">Age</label>
       <input type="number" id="age" name="age" formControlName="age" />
-    </div>
-    <div>
       <small
         *ngIf="
           !reactiveForm.get('age')?.valid && reactiveForm.get('age')?.touched
         "
+        class="error-message"
         >Invalid Age</small
       >
     </div>
@@ -64,13 +62,12 @@
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" id="email" name="email" formControlName="email" />
-    </div>
-    <div>
       <small
         *ngIf="
           !reactiveForm.get('email')?.valid &&
           reactiveForm.get('email')?.touched
         "
+        class="error-message"
         >Invalid Email</small
       >
     </div>
@@ -83,13 +80,12 @@
         name="position"
         formControlName="position"
       />
-    </div>
-    <div>
       <small
         *ngIf="
           !reactiveForm.get('position')?.valid &&
           reactiveForm.get('position')?.touched
         "
+        class="error-message"
         >Invalid Position</small
       >
     </div>
@@ -98,13 +94,12 @@
       <div class="form-group">
         <label for="area">Area</label>
         <input type="text" id="area" name="area" formControlName="area" />
-      </div>
-      <div>
         <small
           *ngIf="
             !reactiveForm.get('address.area')?.valid &&
             reactiveForm.get('address.area')?.touched
           "
+          class="error-message"
           >Invalid Area</small
         >
       </div>
@@ -112,13 +107,12 @@
       <div class="form-group">
         <label for="postal">Postal</label>
         <input type="text" id="postal" name="postal" formControlName="postal" />
-      </div>
-      <div>
         <small
           *ngIf="
             !reactiveForm.get('address.postal')?.valid &&
             reactiveForm.get('address.postal')?.touched
           "
+          class="error-message"
           >Invalid Postal</small
         >
       </div>
@@ -126,13 +120,12 @@
       <div class="form-group">
         <label for="city">City</label>
         <input type="text" id="city" name="city" formControlName="city" />
-      </div>
-      <div>
         <small
           *ngIf="
             !reactiveForm.get('address.city')?.valid &&
             reactiveForm.get('address.city')?.touched
           "
+          class="error-message"
           >Invalid City</small
         >
       </div>
@@ -142,36 +135,85 @@
       <ng-container
         *ngFor="let skill of reactiveForm.get('skills')['controls']; index as i"
       >
-        <label for="skill">Skills</label>
-        <input type="text" name="" id="" formControlName="{{ i }}" />
-        <button type="button" (click)="removeSkill(i)" class="removeSkill">
-          Remove
-        </button>
+        <div class="form-group">
+          <label for="skill">Skills</label>
+          <input type="text" name="" id="" formControlName="{{ i }}" />
+          <button
+            type="button"
+            (click)="removeSkill(i)"
+            class="remove-skill-btn"
+          >
+            Remove
+          </button>
+        </div>
       </ng-container>
-      <button type="button" (click)="addSkill()" class="addSkill">
+      <button type="button" (click)="addSkill()" class="add-skill-btn">
         Add Skill
       </button>
+      <button type="button" (click)="clearForm()" class="submit-btn">Clear</button>
     </div>
 
     <div class="form-group">
-      <button type="submit" [disabled]="!reactiveForm.valid">Register</button>
+      <button type="submit" [disabled]="!reactiveForm.valid" class="submit-btn">
+        Register
+      </button>
     </div>
   </form>
 
-  <div *ngIf="submitted">
-    <h3>Submitted Information</h3>
-    <p><strong>Name:</strong> {{ submittedData.name }}</p>
-    <p><strong>Age:</strong> {{ submittedData.age }}</p>
-    <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
-    <p><strong>Email:</strong> {{ submittedData.email }}</p>
-    <p><strong>Position:</strong> {{ submittedData.position }}</p>
-    <p><strong>Address:</strong></p>
-    <p><strong>Area:</strong> {{ submittedData.address.area }}</p>
-    <p><strong>Postal:</strong> {{ submittedData.address.postal }}</p>
-    <p><strong>City:</strong> {{ submittedData.address.city }}</p>
-    <p><strong>Skills:</strong></p>
-    <p *ngFor="let skill of skills.controls; index as i">
-      Skill {{ i + 1 }}: {{ skill.value }}
-    </p>
+  <div *ngIf="submitted" class="submitted-info">
+    <h3 class="tableHeader">Submitted Information</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>{{ submittedData.name }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>{{ submittedData.age }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{ submittedData.gender }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ submittedData.email }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Position</th>
+        <td>{{ submittedData.position }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Area</th>
+        <td>{{ submittedData.address.area }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Postal</th>
+        <td>{{ submittedData.address.postal }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{ submittedData.address.city }}</td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+      <tr>
+        <th>Skills</th>
+        <td>
+          <ul>
+            <li *ngFor="let skill of skills.controls; index as i">
+              {{ skill.value }}
+            </li>
+          </ul>
+        </td>
+        <td><button (click)="editEmployee()" class="edit-btn">Edit</button></td>
+      </tr>
+    </table>
   </div>
 </div>
