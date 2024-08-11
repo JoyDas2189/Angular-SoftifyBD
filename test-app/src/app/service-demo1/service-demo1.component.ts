@@ -5,12 +5,14 @@ import { TestService } from '../testService.service';
   selector: 'app-service-demo1',
   templateUrl: './service-demo1.component.html',
   styleUrl: './service-demo1.component.css',
+  providers: [TestService],
 })
 export class ServiceDemo1Component {
   title: string = 'TypeScript';
 
+  constructor(private testService: TestService) {}
+
   onClick() {
-    const clickService = new TestService();
-    clickService.onClicked(this.title);
+    this.testService.onClicked(this.title);
   }
 }

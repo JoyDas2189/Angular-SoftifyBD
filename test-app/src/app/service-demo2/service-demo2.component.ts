@@ -4,12 +4,15 @@ import { TestService } from '../testService.service';
 @Component({
   selector: 'app-service-demo2',
   templateUrl: './service-demo2.component.html',
-  styleUrl: './service-demo2.component.css'
+  styleUrl: './service-demo2.component.css',
+  providers: [TestService]
 })
 export class ServiceDemo2Component {
   title:string = 'Angular';
+
+  constructor(private testService: TestService) {}
+
   onClick() {
-    const clickService = new TestService();
-    clickService.onClicked(this.title);
+    this.testService.onClicked(this.title);
   }
 }

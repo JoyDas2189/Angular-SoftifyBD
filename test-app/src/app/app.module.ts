@@ -28,6 +28,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { EmployeeManagementSystemReactiveFormComponent } from './employee-management-system-reactive-form/employee-management-system-reactive-form.component';
 import { ServiceDemo1Component } from './service-demo1/service-demo1.component';
 import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
+import { HttpClientComponent } from './http-client/http-client.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
     EmployeeManagementSystemReactiveFormComponent,
     ServiceDemo1Component,
     ServiceDemo2Component,
+    HttpClientComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
