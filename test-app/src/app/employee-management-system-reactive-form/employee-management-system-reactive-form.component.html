@@ -1,0 +1,177 @@
+<div class="registration-form">
+  <h2>Registration Form using Reactive Form</h2>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <!-- Form Fields -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" formControlName="name" />
+    </div>
+    <div>
+      <small
+        *ngIf="
+          !reactiveForm.get('name')?.valid && reactiveForm.get('name')?.touched
+        "
+        >Invalid Name</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" formControlName="age" />
+    </div>
+    <div>
+      <small
+        *ngIf="
+          !reactiveForm.get('age')?.valid && reactiveForm.get('age')?.touched
+        "
+        >Invalid Age</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="radio-group">
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            formControlName="gender"
+          />
+          Male
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            formControlName="gender"
+          />
+          Female
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            formControlName="gender"
+          />
+          Other
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" formControlName="email" />
+    </div>
+    <div>
+      <small
+        *ngIf="
+          !reactiveForm.get('email')?.valid &&
+          reactiveForm.get('email')?.touched
+        "
+        >Invalid Email</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input
+        type="text"
+        id="position"
+        name="position"
+        formControlName="position"
+      />
+    </div>
+    <div>
+      <small
+        *ngIf="
+          !reactiveForm.get('position')?.valid &&
+          reactiveForm.get('position')?.touched
+        "
+        >Invalid Position</small
+      >
+    </div>
+
+    <div formGroupName="address">
+      <div class="form-group">
+        <label for="area">Area</label>
+        <input type="text" id="area" name="area" formControlName="area" />
+      </div>
+      <div>
+        <small
+          *ngIf="
+            !reactiveForm.get('address.area')?.valid &&
+            reactiveForm.get('address.area')?.touched
+          "
+          >Invalid Area</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="postal">Postal</label>
+        <input type="text" id="postal" name="postal" formControlName="postal" />
+      </div>
+      <div>
+        <small
+          *ngIf="
+            !reactiveForm.get('address.postal')?.valid &&
+            reactiveForm.get('address.postal')?.touched
+          "
+          >Invalid Postal</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" formControlName="city" />
+      </div>
+      <div>
+        <small
+          *ngIf="
+            !reactiveForm.get('address.city')?.valid &&
+            reactiveForm.get('address.city')?.touched
+          "
+          >Invalid City</small
+        >
+      </div>
+    </div>
+
+    <div formArrayName="skills">
+      <ng-container
+        *ngFor="let skill of reactiveForm.get('skills')['controls']; index as i"
+      >
+        <label for="skill">Skills</label>
+        <input type="text" name="" id="" formControlName="{{ i }}" />
+        <button type="button" (click)="removeSkill(i)" class="removeSkill">
+          Remove
+        </button>
+      </ng-container>
+      <button type="button" (click)="addSkill()" class="addSkill">
+        Add Skill
+      </button>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" [disabled]="!reactiveForm.valid">Register</button>
+    </div>
+  </form>
+
+  <div *ngIf="submitted">
+    <h3>Submitted Information</h3>
+    <p><strong>Name:</strong> {{ submittedData.name }}</p>
+    <p><strong>Age:</strong> {{ submittedData.age }}</p>
+    <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Position:</strong> {{ submittedData.position }}</p>
+    <p><strong>Address:</strong></p>
+    <p><strong>Area:</strong> {{ submittedData.address.area }}</p>
+    <p><strong>Postal:</strong> {{ submittedData.address.postal }}</p>
+    <p><strong>City:</strong> {{ submittedData.address.city }}</p>
+    <p><strong>Skills:</strong></p>
+    <p *ngFor="let skill of skills.controls; index as i">
+      Skill {{ i + 1 }}: {{ skill.value }}
+    </p>
+  </div>
+</div>

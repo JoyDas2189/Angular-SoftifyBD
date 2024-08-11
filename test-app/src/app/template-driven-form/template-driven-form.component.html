@@ -1,0 +1,103 @@
+<div class="registration-form">
+  <h2>Registration Form using Template Driven</h2>
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" name="firstname" required ngModel #firstname="ngModel"/>
+    </div>
+    <div>
+      <small *ngIf="firstname.invalid && firstname.touched">First Name is a required field</small>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" name="lastname" required ngModel #lastname="ngModel"/>
+    </div>
+    <div>
+      <small *ngIf="lastname.invalid && lastname.touched">Last Name is a required field</small>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required ngModel #age="ngModel"/>
+    </div>
+    <div>
+      <small *ngIf="age.invalid && age.touched">Age is a required field</small>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" value="male" required ngModel/> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" required ngModel /> Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other" required ngModel/> Other
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required email ngModel #email="ngModel"/>
+    </div>
+    <div>
+      <small *ngIf="email.invalid && email.touched">Email is a required field</small>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required ngModel #password="ngModel"/>
+    </div>
+    <div>
+      <small *ngIf="password.invalid && password.touched">Password is a required field</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input 
+        type="password" 
+        id="confirmPassword" 
+        name="confirmPassword" 
+        required 
+        ngModel 
+        #confirmPassword="ngModel" 
+      />
+    </div>
+    <div>
+      <small *ngIf="confirmPassword.touched && confirmPassword.value !== password.value">Passwords do not match</small>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select id="country" name="country" required ngModel>
+        <option value="">Select your country</option>
+        <option value="United States">United States</option>
+        <option value="bangladesh">Bangladesh</option>
+        <option value="canada">Canada</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="australia">Australia</option>
+        <option value="india">India</option>
+        <option value="germany">Germany</option>
+        <option value="france">France</option>
+        <option value="japan">Japan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!myForm.valid || (confirmPassword.value !== password.value)">Register</button>
+    </div>
+  </form>
+
+  <div class="outputForm" *ngIf="submitted">
+    <h3 class="outputHeading">Submitted Information</h3>
+    <p><strong>First Name:</strong> {{ submittedData.firstname }}</p>
+    <p><strong>Last Name:</strong> {{ submittedData.lastname }}</p>
+    <p><strong>Age:</strong> {{ submittedData.age }}</p>
+    <p><strong>Gender:</strong> {{ submittedData.gender }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Country:</strong> {{ submittedData.country }}</p>
+  </div>
+</div>
