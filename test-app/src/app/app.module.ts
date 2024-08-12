@@ -29,6 +29,7 @@ import { EmployeeManagementSystemReactiveFormComponent } from './employee-manage
 import { ServiceDemo1Component } from './service-demo1/service-demo1.component';
 import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
 import { HttpClientComponent } from './http-client/http-client.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { HttpClientComponent } from './http-client/http-client.component';
     ServiceDemo1Component,
     ServiceDemo2Component,
     HttpClientComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideClientHydration()],

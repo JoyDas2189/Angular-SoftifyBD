@@ -1,0 +1,28 @@
+.error-container {
+    text-align: center; /* Center align text */
+    margin-top: auto; /* Space from the top */
+    color: #333; /* Dark text color */
+    font-family: 'Arial', sans-serif; /* Font family */
+  }
+  
+  .error-container h1 {
+    font-size: 72px; /* Large font size for the error code */
+    color: #ff6b6b; /* Red color for emphasis */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  .error-container p {
+    font-size: 24px; /* Smaller font for the message */
+    color: #555; /* Slightly lighter color for the paragraph */
+    margin-bottom: 40px; /* Space below the paragraph */
+  }
+  
+  .error-container p:after {
+    content: ''; /* Decorative line */
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #ff6b6b;
+    margin: 20px auto 0 auto;
+  }
+  
