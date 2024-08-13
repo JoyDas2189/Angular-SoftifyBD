@@ -15,7 +15,7 @@ export class TemplateDrivenFormComponent {
     email: '',
     country: '',
   };
-firstname: any;
+  firstname: any;
   onSubmit(form: any) {
     if (form.valid) {
       this.submitted = true;

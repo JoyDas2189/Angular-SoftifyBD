@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="pipetable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>Department</th>
+        <th>Batch</th>
+        <th>Marks</th>
+        <th>Marks in (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of students">
+        <td>{{ std.id }}</td>
+        <td>{{ std.name }}</td>
+        <td>{{ std.gender | uppercase }}</td>
+        <td>{{ std.dob | date : "fullDate" | uppercase }}</td>
+        <td>{{ std.department | uppercase }}</td>
+        <td>{{ std.batch }}</td>
+        <td>{{ std.marks }}</td>
+        <td>{{ std.marks | custom : totalMarks | number : '1.2-2' }}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

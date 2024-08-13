@@ -28,6 +28,12 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { EmployeeManagementSystemReactiveFormComponent } from './employee-management-system-reactive-form/employee-management-system-reactive-form.component';
 import { HttpRequestComponent } from './http-request/http-request.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceDemo1Component } from './service-demo1/service-demo1.component';
+import { ServiceDemo2Component } from './service-demo2/service-demo2.component';
+import { HttpClientComponent } from './http-client/http-client.component';
+import { ErrorComponent } from './error/error.component';
+import { PipeComponent } from './pipes/pipe/pipe.component';
+import { CustomPipe } from './custom.pipe';
 
 @NgModule({
   declarations: [
@@ -52,6 +58,12 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormComponent,
     EmployeeManagementSystemReactiveFormComponent,
     HttpRequestComponent,
+    ServiceDemo1Component,
+    ServiceDemo2Component,
+    HttpClientComponent,
+    ErrorComponent,
+    PipeComponent,
+    CustomPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [provideClientHydration()],

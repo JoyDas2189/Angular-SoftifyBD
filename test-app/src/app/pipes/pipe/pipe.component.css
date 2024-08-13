@@ -1,0 +1,43 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pipetable {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .pipetable th, .pipetable td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .pipetable th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .pipetable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .pipetable tr:hover {
+    background-color: #ddd;
+  }
+  
+  .pipetable td {
+    font-size: 14px;
+  }
+  
+  .pipetable th {
+    font-size: 16px;
+  }
+  
+  
