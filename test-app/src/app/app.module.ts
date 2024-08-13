@@ -26,6 +26,8 @@ import { CustomAttributeHostbinderDirective } from './custom-attribute-hostbinde
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { EmployeeManagementSystemReactiveFormComponent } from './employee-management-system-reactive-form/employee-management-system-reactive-form.component';
+import { HttpRequestComponent } from './http-request/http-request.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,8 +51,9 @@ import { EmployeeManagementSystemReactiveFormComponent } from './employee-manage
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
     EmployeeManagementSystemReactiveFormComponent,
+    HttpRequestComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

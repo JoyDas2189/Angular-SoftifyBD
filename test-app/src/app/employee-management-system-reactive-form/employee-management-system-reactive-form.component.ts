@@ -20,22 +20,17 @@ export class EmployeeManagementSystemReactiveFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.reactiveForm = this.fb.group({
-      name: ['joy', Validators.required],
-      age: ['23', [Validators.required, Validators.min(1)]],
-      gender: ['male', Validators.required],
-      email: [
-        'joy.softifybd@gmail.com',
-        [Validators.required, Validators.email],
-      ],
-      position: ['Intern', Validators.required],
+      name: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(1)]],
+      gender: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      position: ['', Validators.required],
       address: this.fb.group({
-        area: ['Sutrapur', Validators.required],
-        postal: ['1100', Validators.required],
-        city: ['Dhaka', Validators.required],
+        area: ['', Validators.required],
+        postal: ['', Validators.required],
+        city: ['', Validators.required],
       }),
-      skills: new FormArray([
-        new FormControl('Angular', Validators.required),
-      ]),
+      skills: new FormArray([new FormControl('', Validators.required)]),
     });
   }
 
@@ -49,8 +44,27 @@ export class EmployeeManagementSystemReactiveFormComponent {
   removeSkill(index: number) {
     this.skills.removeAt(index);
   }
-
-
+  editEmployee() {
+    this.reactiveForm.patchValue(this.submittedData);
+    this.submitted = false;
+  }
+  clearForm() {
+    this.reactiveForm.reset({
+      name: '',
+      age: '',
+      gender: '',
+      email: '',
+      position: '',
+      address: {
+        area: '',
+        postal: '',
+        city: '',
+      },
+      skills: this.fb.array([]),
+    });
+    this.submittedData = '';
+    this.submitted = false;
+  }
   onSubmit() {
     if (this.reactiveForm.valid) {
       this.submittedData = this.reactiveForm.value;
